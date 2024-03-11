@@ -8,7 +8,8 @@ import java.io.InputStreamReader;
  * jar cf fichero.jar Fichero.class
  */
 
- /**
+ /**Clase donde leemos los datos necesarios para la ecuación del tipo
+  * ax + b = 0, donde x = -b / a
  * @author Andrea Castilla Cocera
  * @email acascoc098@g.educaand.es
  */
@@ -21,7 +22,7 @@ public class Base {
             String a = teclado.readLine();
             String b = teclado.readLine();
 
-            System.out.println("Argumentos: " + a + " " + b);
+            System.out.println(((-Integer.parseInt(b))/Integer.parseInt(a)));
 
         } catch (IOException ei) {
             System.out.println("ERROR: error con los flujos E/S");

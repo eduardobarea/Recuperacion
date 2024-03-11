@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-/**
+/**Clase que ejecuta el fichero jar y el proceso
  * @author Andrea Castilla Cocera
  * @email acascoc098@g.educaand.es
  */
@@ -37,8 +37,8 @@ public class Evalua {
             OutputStream os = p.getOutputStream();
             OutputStreamWriter osw = new OutputStreamWriter(os);
             PrintWriter pw = new PrintWriter(osw);
-            pw.write(Integer.parseInt(a));
-            pw.write(Integer.parseInt(b));
+            pw.print(a);
+            pw.print(b);
             pw.close();
             //System.out.println(a + b); Para llevar el control
             
@@ -50,6 +50,13 @@ public class Evalua {
             } else {
                 System.out.println("ERROR: en la ejecución del proceso.");
             }
+
+            InputStreamReader is = new InputStreamReader(p.getInputStream());
+            BufferedReader br = new BufferedReader(is);
+
+            String resultado = br.readLine();
+            System.out.println(resultado);
+            br.close();
 
         } catch (Exception e) {
             // TODO: handle exception
